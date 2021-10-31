@@ -1,3 +1,26 @@
+
+/* h1::before {
+    content: "";
+    display: inline-block;
+    height: 10px;
+    width: 100px;
+    background-color: black;
+} */
+h1 {
+    text-align: center;
+}
+
+h1::after, h1::before {
+    content: "";
+    display: inline-block;
+    height: 5px;
+    width: 20%;
+    transform: translateY(-7px);
+    background-color: black;
+}
+
+/* The content is still inside the element, not before or after */
+
 .box {
     width: 100px;
     height: 100px;
@@ -13,8 +36,6 @@
     display: block;
     content: "After";
 }
-
-
 
 .text::before {
     /* content: '\201C'; */
@@ -32,8 +53,10 @@
     /* content: "Test"; */
 }
 
-/* Can't to image  */
 
 .movie-title[data-rating]::after {
     content: attr(data-rating)
 }
+
+/* Ne fonctionne pas avec les éléménts img  */
+/* "content" peut être un counter */
